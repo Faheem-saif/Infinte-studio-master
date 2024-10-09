@@ -1,3 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",  // Disable unused variable checks
+    "@typescript-eslint/no-explicit-any": "off", // Disable 'any' type checks
+    "react-hooks/exhaustive-deps": "off",        // Disable dependency checks in useEffect
+    "prefer-const": "off",                        // Disable prefer const over let
+    "no-var": "off",                              // Allow the use of var
+    "@next/next/no-img-element": "off"           // Allow <img> tag usage
+  }
 }

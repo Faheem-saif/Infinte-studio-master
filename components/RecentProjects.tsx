@@ -5,8 +5,19 @@ import React, { useEffect, useState } from 'react';
 import { PinContainer } from './ui/3d-pin';
 import { FaLocationArrow } from 'react-icons/fa';
 
+// Define the type for each project
+type Project = {
+  id: number;
+  title: string;
+  des: string;
+  img: string;
+  iconLists: string[];
+  link: string;
+};
+
 const RecentProjects = () => {
-  const [clientProjects, setClientProjects] = useState([]);
+  // Define the state with the correct type (Project[])
+  const [clientProjects, setClientProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     // Set the projects state only on the client side
@@ -33,20 +44,6 @@ const RecentProjects = () => {
               <p className='lg:text-xl lg:font-normal font-light text-sm line-clamp-2'>{des}</p>
 
               <div className='flex items-center justify-between mt-7 mb-3'>
-                {/* <div className="flex items-center">
-                  {iconLists.map((icon, index) => (
-                    <div
-                      key={`${icon}-${index}`} // Unique key
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt={`icon-${index}`} className="p-2" />
-                    </div>
-                  ))}
-                </div> */}
-
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">Check Our Work</p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
@@ -58,6 +55,6 @@ const RecentProjects = () => {
       </div>
     </div>
   );
-}
+};
 
 export default RecentProjects;
